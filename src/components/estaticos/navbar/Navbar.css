@@ -1,0 +1,13 @@
+.bg-menu{
+    background: linear-gradient(36deg, #5cc9a8 8%,#289c64 89%);
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    font-weight: bold!important;
+    color: black;
+}
