@@ -41,3 +41,34 @@
     border-radius: 22px;
     background: linear-gradient(36deg, #35505e 8%,#289c64 95%);  
 }
+
+
+.card-title{
+    font-weight: bold!important;
+    color: white
+}
+
+form{
+    width: 250px;
+}
+
+label{
+
+}
+
+.form-input{
+    width:100%
+}
+
+.form-btn{
+    background-color: green;
+    color: black;
+}
+
+.MuiInput-underline:after{
+    border-bottom: 1px solid white!important;
+}
+
+.MuiInput-underline:before{
+    border-bottom: 1px solid red!important;
+}
