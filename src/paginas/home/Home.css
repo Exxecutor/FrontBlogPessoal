@@ -20,7 +20,7 @@
     align-items: center;
 
     
-    background-image: url("https://www.webassetscdn.com/avira/prod-blog/wp-content/uploads/2016/08/avira_blog_mr.robot-header.jpg");
+    background-image: url("https://files.tecnoblog.net/wp-content/uploads/2020/09/como-jogar-among-us-e1601393444165-700x393.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -39,10 +39,11 @@
     align-items: center;
 
     border-radius: 22px;
-    background: linear-gradient(36deg, #35505e 8%,#289c64 95%);  
+    /* O ultimo atributo do RGB é a transparencia */
+    background: linear-gradient(0deg, rgba(34,193,195,0) 20%, rgba(253,187,45,1) 74%);
 }
 
-
+/*  colocar o important para sobrescrever as configurações base */
 .card-title{
     font-weight: bold!important;
     color: white
@@ -53,22 +54,28 @@ form{
 }
 
 label{
+    color: #ffffff!important;
+    font-weight: bold!important;
 
 }
 
 .form-input{
-    width:100%
+    width:100%;
 }
 
 .form-btn{
-    background-color: green;
+    background-color: green!important;
     color: black;
 }
-
+/*  Muda a cor de quando o imput está ou não selecionado */
 .MuiInput-underline:after{
     border-bottom: 1px solid white!important;
 }
 
 .MuiInput-underline:before{
     border-bottom: 1px solid red!important;
+}
+/* Muda a cor do texto digitado */
+.MuiInputBase-input{
+    color: white!important;
 }

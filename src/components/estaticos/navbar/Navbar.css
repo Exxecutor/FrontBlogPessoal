@@ -1,5 +1,5 @@
 .bg-menu{
-    background: linear-gradient(36deg, #5cc9a8 8%,#289c64 89%);
+    background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 50%);
 }
 
 .container{
@@ -10,4 +10,8 @@
 .title{
     font-weight: bold!important;
     color: black;
+}
+
+.MuiTypography-root{
+    font-family: Courier New!important;
 }

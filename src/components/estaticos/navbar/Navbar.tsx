@@ -22,22 +22,22 @@ function navbar() {
                     <Box display="flex" justifyContent="start">
                         <Box mx={1} style={{cursor: "pointer"}} >
                                 <Typography variant = "h6" color = "inherit">
-                                    home
+                                    Home
                                 </Typography>
                         </Box>
                         <Box mx={1} style={{cursor: "pointer"}} >
                                 <Typography variant = "h6" color = "inherit">
-                                    postagens
+                                    Postagens
                                 </Typography>
                         </Box>
                         <Box mx={1} style={{cursor: "pointer"}} >
                                 <Typography variant = "h6" color = "inherit">
-                                    cadastrar tema
+                                    Cadastrar tema
                                 </Typography>
                         </Box>
                         <Box mx={1} style={{cursor: "pointer"}} >
                                 <Typography variant = "h6" color = "inherit">
-                                    logout
+                                    Logout
                                 </Typography>
                         </Box>
                     </Box>
