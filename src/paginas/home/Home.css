@@ -9,3 +9,16 @@
     display: block;
     margin:0 auto;
 }
+
+.botao{
+    border-color: white !important;
+    background-color: #3F51B5;
+    color: white !important;
+}
+
+.postagens{
+    background-color: white;
+}
+.caixa{
+    background-color: #3F51B5;
+}
