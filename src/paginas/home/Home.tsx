@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
-import CarouselComponent from '../../components/Carousel/CarouselComponent'
+import CarouselComponent from '../../components/Carousel/Carrossel'
 import Lista from '../../components/Lista/Lista'
 
 import "./Home.css"
