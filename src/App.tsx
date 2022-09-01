@@ -8,6 +8,7 @@ import Home from './paginas/home/Home';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import Login from './paginas/Login/Login';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <Route path='/' element={ <Login/> } />
           <Route path='/home' element={ <Home/> } />
           <Route path='/login' element={ <Login/> } />
-          {/* <Route path="/cadastro" element={<CadastroUsuario/>} /> */}
+          <Route path="/cadastro" element={<CadastroUsuario/>} />
         </Routes>
         </div>
     <Footer/>
