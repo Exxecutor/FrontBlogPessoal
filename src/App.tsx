@@ -9,6 +9,8 @@ import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import Login from './paginas/Login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import ListaTema from './components/temas/listatema/ListaTema';
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path='/home' element={ <Home/> } />
           <Route path='/login' element={ <Login/> } />
           <Route path="/cadastro" element={<CadastroUsuario/>} />
+          <Route path="/temas" element={<ListaTema />} />
+          <Route path="/posts" element={<ListaPostagem />} />
         </Routes>
         </div>
     <Footer/>

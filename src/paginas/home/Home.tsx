@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css';
 import {Box} from "@mui/material"
 import {Grid, Paper, Button, Typography} from "@material-ui/core"
-// import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem'
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem'
 // Digitar rfce para criar componentes
 function Home(){
     return(
@@ -19,7 +19,7 @@ function Home(){
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}>
             </Box>
-            <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
+            <Button variant="outlined" className="botao" >Ver Postagens</Button>
           </Box>
 
         </Grid>
@@ -28,9 +28,9 @@ function Home(){
           <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
         </Grid>
 
-        {/* <Grid xs={12} style={{ backgroundColor: "white" }}>
+        <Grid xs={12} style={{ backgroundColor: "white" }}>
           <TabPostagem />
-        </Grid> */}
+        </Grid> 
       </Grid>
     </>
     );
