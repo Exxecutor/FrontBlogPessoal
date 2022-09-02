@@ -8,12 +8,17 @@ import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 
 function Login() {
+    // Redireciona o usuário para determinada página
     let history = useNavigate();
+    //Hooks que vão manipular o nosso local storage para gravar o token
     const [token, setToken] = useLocalStorage('token');
+    // useState define como uma variavel será inicializada quando o componente for renderizado
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
+        nome: "",
         usuario: "",
         senha: "",
+        foto: "",
         token: ""
     })
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
@@ -22,7 +27,7 @@ function Login() {
             [e.target.name]: e.target.value
         })
     }
-    //hook
+    //hook de efeito colateral, sempre executa uma função quando o que estiner no seu Array é ativado
     useEffect(()=>{
         if(token != ''){
             history('/home')
@@ -30,6 +35,7 @@ function Login() {
     }, [token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+        //previne que a página seja recarregada
         e.preventDefault();
         try{
             // const resposta= await api.post
