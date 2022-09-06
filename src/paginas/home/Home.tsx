@@ -3,7 +3,7 @@ import './Home.css';
 import {Box} from "@mui/material"
 import {Grid, Paper, Button, Typography} from "@material-ui/core"
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem'
-import ModalPostagem from '../../components/postagens/modalpostagem/ModalPostagem'
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem'
 import {useNavigate} from 'react-router-dom'
 import useLocalStorage from 'react-use-localstorage';
 // Digitar rfce para criar componentes
