@@ -1,10 +1,23 @@
-import React from 'react'
+import React,  { useEffect }  from 'react'
 import './Home.css';
 import {Box} from "@mui/material"
 import {Grid, Paper, Button, Typography} from "@material-ui/core"
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem'
+import ModalPostagem from '../../components/postagens/modalpostagem/ModalPostagem'
+import {useNavigate} from 'react-router-dom'
+import useLocalStorage from 'react-use-localstorage';
 // Digitar rfce para criar componentes
 function Home(){
+  let history = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+    
+    useEffect(() => {
+      if (token == "") {
+          alert("Você precisa estar logado")
+          history("/login")
+  
+      }
+  }, [token])
     return(
         <>
         <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#3F51B5" }}>
@@ -18,6 +31,7 @@ function Home(){
 
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}>
+              <ModalPostagem/>
             </Box>
             <Button variant="outlined" className="botao" >Ver Postagens</Button>
           </Box>
