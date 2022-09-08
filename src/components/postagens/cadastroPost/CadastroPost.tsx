@@ -10,6 +10,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 function CadastroPost() {
     let history = useNavigate();
     const { id } = useParams<{ id: string }>();
+
     const [temas, setTemas] = useState<Tema[]>([])
     const [token, setToken] = useLocalStorage('token');
 
@@ -28,10 +29,16 @@ function CadastroPost() {
         })
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
-        titulo: '',
-        texto: '',
-        tema: null
-    })
+            titulo: '',
+            texto: '',
+            tema: null,
+            usuario: {
+                id: 1,  // iniciar o usuario com id:1 gambiarra
+                nome: '',
+                usuario: '',
+                senha: ''
+            }
+        })
 
     useEffect(() => { 
         setPostagem({
@@ -48,7 +55,7 @@ function CadastroPost() {
     }, [id])
 
     async function getTemas() {
-        await busca("/tema", setTemas, {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -84,6 +91,9 @@ function CadastroPost() {
             })
             alert('Postagem atualizada com sucesso');
         } else {
+
+            console.log(postagem)
+
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
