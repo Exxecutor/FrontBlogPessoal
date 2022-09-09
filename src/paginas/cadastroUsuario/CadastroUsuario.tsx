@@ -124,7 +124,7 @@ function CadastroUsuario() {
                         <TextField
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             value={user.senha}
-                            id='senha'
+                            id='Digite a senha'
                             label='senha'
                             variant='outlined'
                             name='senha'
@@ -134,7 +134,7 @@ function CadastroUsuario() {
                         <TextField
                             onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
                             value={confirmarSenha}
-                            id='confirmarSenha'
+                            id='Confirme a senha'
                             label='confirmarSenha'
                             variant='outlined'
                             name='confirmarSenha'

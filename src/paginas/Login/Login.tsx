@@ -4,14 +4,18 @@ import { Grid, Paper, Button, Typography, TextField } from "@material-ui/core"
 import { Link ,useNavigate } from "react-router-dom"
 import './Login.css';
 import UserLogin from '../../models/UserLogin';
-import useLocalStorage from 'react-use-localstorage';
+// import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
+import {useDispatch} from 'react-redux';
+import {addToken} from "../../store/tokens/actions";
 
 function Login() {
     // Redireciona o usuário para determinada página
     let history = useNavigate();
+    const dispatch = useDispatch();
+    const [token, setToken] = useState('');
     //Hooks que vão manipular o nosso local storage para gravar o token
-    const [token, setToken] = useLocalStorage('token');
+    // const [token, setToken] = useLocalStorage('token');
     // useState define como uma variavel será inicializada quando o componente for renderizado
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
@@ -30,6 +34,7 @@ function Login() {
     //hook de efeito colateral, sempre executa uma função quando o que estiner no seu Array é ativado
     useEffect(()=>{
         if(token != ''){
+            dispatch(addToken(token));
             history('/home')
         }
     }, [token])

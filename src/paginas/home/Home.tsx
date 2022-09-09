@@ -4,12 +4,17 @@ import {Box} from "@mui/material"
 import {Grid, Paper, Button, Typography} from "@material-ui/core"
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem'
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem'
-import {useNavigate} from 'react-router-dom'
-import useLocalStorage from 'react-use-localstorage';
+import {Link, useNavigate} from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokensReducer';
+// import useLocalStorage from 'react-use-localstorage';
+
 // Digitar rfce para criar componentes
 function Home(){
   let history = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const token= useSelector<TokenState, TokenState["tokens"]>(
+      (state) => state.tokens
+    );
     
     useEffect(() => {
       if (token == "") {
@@ -18,7 +23,7 @@ function Home(){
   
       }
   }, [token])
-    return(
+  return(
         <>
         <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#3F51B5" }}>
         
@@ -33,7 +38,9 @@ function Home(){
             <Box marginRight={1}>
               <ModalPostagem/>
             </Box>
-            <Button variant="outlined" className="botao" >Ver Postagens</Button>
+            <Link to="/posts">
+            <Button variant="outlined" className="botao text-decorator-nome" >Ver Postagens</Button>
+            </Link>
           </Box>
 
         </Grid>

@@ -4,10 +4,17 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography,Grid } from '@material-ui/core';
 import Box from '@mui/material/Box';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
-function footer() {
-    return (
-        <>
+function Footer() {
+
+    const token= useSelector<TokenState, TokenState["tokens"]>(
+        (state)=> state.tokens
+    );
+    var footerComponent;
+    if(token != ""){
+        footerComponent=
             <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
                     <Box style={{ backgroundColor: "#3F51B5", height: "120px" }}>
@@ -38,7 +45,12 @@ function footer() {
                     </Box>
                 </Grid>
             </Grid>
+    }
+
+    return (
+        <>
+            {footerComponent}
         </>
     )
 }
-export default footer;
+export default Footer;
