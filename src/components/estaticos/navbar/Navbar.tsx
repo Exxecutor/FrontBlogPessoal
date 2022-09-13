@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from "react-redux";
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { addToken } from '../../../store/tokens/actions';
+import { toast } from "react-toastify";
 // import useLocalStorage from 'react-use-localstorage';
 // import Button from '@mui/material/Button';
 //import IconButton from '@mui/material/IconButton';
@@ -26,7 +27,17 @@ function Navbar() {
 
     function goLogout(){
         dispatch(addToken(''));
-        alert("Usuário deslogado")
+        // alert("Usuário deslogado")
+        toast.info("Usuário deslogado",{
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            theme: 'colored',
+            progress: undefined,
+        });
         history("/login")
     }
 

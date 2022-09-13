@@ -7,6 +7,7 @@ import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostage
 import {Link, useNavigate} from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 // import useLocalStorage from 'react-use-localstorage';
 
 // Digitar rfce para criar componentes
@@ -18,7 +19,17 @@ function Home(){
     
     useEffect(() => {
       if (token == "") {
-          alert("Você precisa estar logado")
+          // alert("Você precisa estar logado")
+          toast.error("Você precisa estar logado",{
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            theme: 'colored',
+            progress: undefined,
+        });
           history("/login")
   
       }

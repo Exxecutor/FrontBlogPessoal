@@ -7,6 +7,7 @@ import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function CadastroTema() {
@@ -23,7 +24,17 @@ function CadastroTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            // alert("Você precisa estar logado")
+            toast.error("Você precisa estar logado",{
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
             history("/login")
     
         }
@@ -66,11 +77,31 @@ function CadastroTema() {
                     }
                 })
 
-                alert('Tema atualizado com sucesso');
+                // alert('Tema atualizado com sucesso');
+                toast.success("Tema atualizado com sucesso",{
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
             // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
                 } catch (error) {
                     console.log(`Error: ${error}`)
-                    alert("Erro, por favor verifique a quantidade minima de caracteres")
+                    // alert("Erro, por favor verifique a quantidade minima de caracteres")
+                    toast.error("Erro, por favor verifique a quantidade minima de caracteres",{
+                        position: toast.POSITION.TOP_RIGHT,
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: false,
+                        theme: 'colored',
+                        progress: undefined,
+                    });
                 }
             // Se o ID for indefinido, tente Cadastrar
             } else {
@@ -83,11 +114,31 @@ function CadastroTema() {
                     }
                 })
                 
-                alert('Tema cadastrado com sucesso');
+                // alert('Tema cadastrado com sucesso');
+                toast.success("Tema cadastrado com sucesso",{
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
             // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
             } catch (error) {
                 console.log(`Error: ${error}`)
-                alert("Erro, por favor verifique a quantidade minima de caracteres")
+                // alert("Erro, por favor verifique a quantidade minima de caracteres")
+                toast.error("Erro, por favor verifique a quantidade minima de caracteres",{
+                    position: toast.POSITION.TOP_RIGHT,
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
             }
         }
     

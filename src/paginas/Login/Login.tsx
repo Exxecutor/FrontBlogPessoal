@@ -8,6 +8,7 @@ import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
 import {useDispatch} from 'react-redux';
 import {addToken} from "../../store/tokens/actions";
+import { toast } from 'react-toastify';
 
 function Login() {
     // Redireciona o usuário para determinada página
@@ -47,9 +48,29 @@ function Login() {
             await login(`/usuarios/logar`, userLogin, setToken)
             // setToken(resposta.data.token)
 
-            alert("Logado com sucesso")
+            // alert("Logado com sucesso")
+            toast.success("Logado com sucesso",{
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
         }catch(error){
-            alert("Erro ao logar")
+            // alert("Erro ao logar")
+            toast.error("Erro ao logar",{
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
         }
     }
     return (
